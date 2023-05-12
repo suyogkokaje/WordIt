@@ -72,7 +72,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/update/:id", (req, res) => {
-  Post.findById(req.params.id).then((post) => {
+  Post.findOne({slug:req.params.id}).then((post) => {
     post.title = req.body.title;
     post.paragraph = req.body.paragraph;
     post.email = req.body.email;
