@@ -6,7 +6,7 @@ export default function Docs() {
     <div className="container mt-3">
       <div className="card p-3 mb-3">
         <div className="banner bg-warning">
-          <h1>Hello, Welcome to our Docs!</h1>
+          <h1>Welcome to our Documentation</h1>
         </div>
         <div className="mt-3">
           <h3>Info :</h3>

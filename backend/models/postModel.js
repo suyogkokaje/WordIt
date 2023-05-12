@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const userModel = require("./userModel");
-
+const shortid = require("shortid");
 const postSchema = mongoose.Schema({
   title: {
     type: String,
@@ -25,6 +25,7 @@ const postSchema = mongoose.Schema({
   comment: {
     type: [],
   },
+  slug: { type: String, unique: true, default: shortid.generate }
 });
 
 module.exports = Post = mongoose.model("post", postSchema);

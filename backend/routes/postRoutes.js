@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Post = require("../models/postModel");
-
+const shortid = require('shortid');
 router.get("/", (req, res) => {
   Post.find()
     .then((posts) => {
@@ -32,21 +32,23 @@ router.put("/comment-add/:id", (req, res) => {
 });
 
 router.post("/create", (req, res) => {
+  
   const newPost = new Post({
     title: req.body.title,
     paragraph: req.body.paragraph,
     email: req.body.email,
     author: req.body.author,
+    slug: shortid.generate() 
   });
-  newPost
-    .save()
-    .then(() => {
-      console.log("Post added Successfully");
-      res.send("Done");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  newPost.save()
+  .then(() => {
+    console.log("Post added Successfully");
+    res.send("Done");
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).send("Some Error Occured. Try Again");
+  });
 });
 
 router.get("/own/:id", (req, res) => {

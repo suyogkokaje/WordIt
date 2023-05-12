@@ -7,7 +7,7 @@ export default function About() {
     <div className="container mt-3">
       <div className="card p-3 mb-3 main-body">
         <div className="banner bg-warning">
-          <h1>Hello, Welcome to our About Page!</h1>
+          <h1>Welcome to WordIt</h1>
         </div>
         <div className="mt-3 d-flex mern">
           <img src={mern} className="mb-3 mr-3" alt="MERN" />
@@ -23,7 +23,7 @@ export default function About() {
           </p>
         </div>
         <div className="mt-3">
-          <h5>React.js Front End</h5>
+          <h5>React.js Client</h5>
           <p>
             The top tier of the MERN stack is React.js, the declarative
             JavaScript framework for creating dynamic client-side applications
@@ -33,7 +33,7 @@ export default function About() {
           </p>
         </div>
         <div className="mt-3">
-          <h5>Express.js and Node.js Server Tier</h5>
+          <h5>Express.js and Node.js Server</h5>
           <p>
             he next level down is the Express.js server-side framework, running
             inside a Node.js server. Express.js bills itself as a “fast,
@@ -44,13 +44,13 @@ export default function About() {
           </p>
         </div>
         <div className="mt-3 mb-3">
-          <h5>MongoDB Database Tier</h5>
+          <h5>MongoDB Database</h5>
           <p>
             MongoDB comes in: JSON documents created in your React.js front end
             can be sent to the Express.js server, where they can be processed
-            and (assuming they’re valid) stored directly in MongoDB for later
-            retrieval. Again, if you’re building in the cloud, you’ll want to
-            look at Atlas. If you’re looking to set up your own MERN stack, read
+            and (assuming they're valid) stored directly in MongoDB for later
+            retrieval. Again, if you're building in the cloud, you'll want to
+            look at Atlas. If you're looking to set up your own MERN stack, read
             on!
           </p>
         </div>
