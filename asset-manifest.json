@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/wordIt/static/css/main.a65c08ea.chunk.css",
+    "main.js": "/wordIt/static/js/main.b1b52182.chunk.js",
+    "main.js.map": "/wordIt/static/js/main.b1b52182.chunk.js.map",
+    "runtime-main.js": "/wordIt/static/js/runtime-main.2972cab4.js",
+    "runtime-main.js.map": "/wordIt/static/js/runtime-main.2972cab4.js.map",
+    "static/js/2.c213486b.chunk.js": "/wordIt/static/js/2.c213486b.chunk.js",
+    "static/js/2.c213486b.chunk.js.map": "/wordIt/static/js/2.c213486b.chunk.js.map",
+    "index.html": "/wordIt/index.html",
+    "static/css/main.a65c08ea.chunk.css.map": "/wordIt/static/css/main.a65c08ea.chunk.css.map",
+    "static/js/2.c213486b.chunk.js.LICENSE.txt": "/wordIt/static/js/2.c213486b.chunk.js.LICENSE.txt",
+    "static/media/loginCss.css": "/wordIt/static/media/Login.b2d75f83.jpg",
+    "static/media/ayush.59c588b3.jpg": "/wordIt/static/media/ayush.59c588b3.jpg",
+    "static/media/mayank.616a5cf7.jpg": "/wordIt/static/media/mayank.616a5cf7.jpg",
+    "static/media/mern.872ccb88.jpg": "/wordIt/static/media/mern.872ccb88.jpg",
+    "static/media/not.b35b7d3b.jpg": "/wordIt/static/media/not.b35b7d3b.jpg",
+    "static/media/priyam.3a3bf2d5.jpg": "/wordIt/static/media/priyam.3a3bf2d5.jpg",
+    "static/media/spinner.5705f324.gif": "/wordIt/static/media/spinner.5705f324.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2972cab4.js",
+    "static/js/2.c213486b.chunk.js",
+    "static/css/main.a65c08ea.chunk.css",
+    "static/js/main.b1b52182.chunk.js"
+  ]
+}
