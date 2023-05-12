@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 export default function EditPost() {
   const [title, setTitle] = useState("");
   const [paragraph, setParagraph] = useState("");
   const [message, setMessage] = useState("");
   const { id } = useParams();
-
+  console.log(id);
   const submitTheData = (e) => {
     e.preventDefault();
     const newArticle = {

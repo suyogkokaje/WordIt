@@ -9,27 +9,41 @@ export default function Home() {
   const [ownPost, setOwnPost] = useState([]);
   const [count, setCount] = useState(2);
   const [count2, setCount2] = useState(2);
+
   useEffect(() => {
+    let isMounted = true;
     axios
       .get("https://wordit-server.onrender.com/posts")
       .then((res) => {
-        setPosts(res.data.reverse());
+        if (isMounted) {
+          setPosts(res.data.reverse());
+        }
       })
       .catch((err) => {
         console.log(err);
       });
+
     if (sessionStorage.getItem("isLogged")) {
       axios
-        .get("https://wordit-server.onrender.com/posts/own/" + sessionStorage.getItem("id"))
+        .get(
+          "https://wordit-server.onrender.com/posts/own/" +
+            sessionStorage.getItem("id")
+        )
         .then((res) => {
-          setOwnPost(res.data.reverse());
-          console.log(res.data);
+          if (isMounted) {
+            setOwnPost(res.data.reverse());
+          }
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <div className="container card">
       <div className="card-header mt-2 mb-3">Latest Posts</div>
@@ -38,8 +52,8 @@ export default function Home() {
           <img className="img-fluid spinner" src={spinner} alt="Loading..." />
         </div>
       ) : (
-        posts.slice(0, count).map((post, key) => {
-          return <PostsList own={false} key={key} article={post} />;
+        posts.slice(0, count).map((post) => {
+          return <PostsList own={false} key={post._id} article={post} />;
         })
       )}
       <div className="d-flex justify-content-center">
@@ -56,8 +70,8 @@ export default function Home() {
       {!ownPost.length ? (
         <div className="d-flex justify-content-center pb-3">None to Show</div>
       ) : (
-        ownPost.slice(0, count2).map((post, key) => {
-          return <PostsList own={true} key={key} article={post} />;
+        ownPost.slice(0, count2).map((post) => {
+          return <PostsList own={true} key={post._id} article={post} />;
         })
       )}
       {!ownPost.length ? (

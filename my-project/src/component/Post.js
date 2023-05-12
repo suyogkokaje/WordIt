@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import spinner from "../assets/spinner.gif";
 import "../css/homeStyle.css";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ export default function Post() {
   const [message, setMessage] = useState("");
   const [comments, setComments] = useState([]);
   const { id } = useParams();
-
+  console.log(id);
   useEffect(() => {
     axios
       .get("https://wordit-server.onrender.com/posts/" + id)
@@ -23,7 +23,7 @@ export default function Post() {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
         setDate(res.data.createdAt);
-        setPostId(res.data._id);
+        setPostId(res.data.id);
         setComments(res.data.comment);
         setAuthor(res.data.author);
         setCommentAuthor(sessionStorage.getItem("username"));
