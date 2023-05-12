@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const userModel = require("./userModel");
 const shortid = require("shortid");
 const postSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId, // add this line
   title: {
     type: String,
     required: true,
