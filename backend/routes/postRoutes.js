@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.put("/comment-add/:id", (req, res) => {
-  Post.findOne({ _id: req.params.id })
+  Post.findById(req.params.id)
     .then((foundPost) => {
       const newComment = { author: req.body.author, comment: req.body.comment };
       foundPost.comment.push(newComment);
