@@ -7,7 +7,7 @@ export default function PostsList(props) {
 
   const deletePost = (id) => {
     axios
-      .delete("http://localhost:5000/posts/delete/" + id)
+      .delete("https://wordit-server.onrender.com/posts/delete/" + id)
       .then((res) => {
         alert(res.data);
         setArticle(article.filter((elem) => elem._id !== id));

@@ -11,7 +11,7 @@ export default function Home() {
   const [count2, setCount2] = useState(2);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts")
+      .get("https://wordit-server.onrender.com/posts")
       .then((res) => {
         setPosts(res.data.reverse());
       })
@@ -20,7 +20,7 @@ export default function Home() {
       });
     if (sessionStorage.getItem("isLogged")) {
       axios
-        .get("http://localhost:5000/posts/own/" + sessionStorage.getItem("id"))
+        .get("https://wordit-server.onrender.com/posts/own/" + sessionStorage.getItem("id"))
         .then((res) => {
           setOwnPost(res.data.reverse());
           console.log(res.data);

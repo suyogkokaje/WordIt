@@ -17,7 +17,7 @@ export default function CreatePost() {
     setTitle("");
     setParagraph("");
     axios
-      .post("http://localhost:5000/posts/create", newArticle)
+      .post("https://wordit-server.onrender.com/posts/create", newArticle)
       .then((res) => {
         console.log(res.data);
         setMessage("Article Added Successfully");
