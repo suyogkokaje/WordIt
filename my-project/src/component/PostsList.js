@@ -20,7 +20,7 @@ export default function PostsList(props) {
     <div className="card mt-1 card-body">
       <Link
         className="text-dark"
-        to={{ pathname: `/post/${props.article._id}`}}
+        to={{ pathname: `/post/${props.article.id}`}}
         
       >
         {/* {console.log(props.article._id)} */}
@@ -35,7 +35,7 @@ export default function PostsList(props) {
       ) : (
         <div className="d-flex justify-content-between">
           <Link
-            to={{ pathname: "/edit/" + props.article._id }}
+            to={{ pathname: "/edit/" + props.article.id }}
             className="btn btn-outline-warning"
             type=""
           >
@@ -43,7 +43,7 @@ export default function PostsList(props) {
           </Link>
           <button
             onClick={() => {
-              deletePost(props.article._id);
+              deletePost(props.article.id);
             }}
             className="btn btn-outline-danger"
           >
