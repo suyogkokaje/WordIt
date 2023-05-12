@@ -15,7 +15,6 @@ export default function Post() {
   const [message, setMessage] = useState("");
   const [comments, setComments] = useState([]);
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
     axios
       .get("https://wordit-server.onrender.com/posts/" + id)
@@ -23,7 +22,7 @@ export default function Post() {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
         setDate(res.data.createdAt);
-        setPostId(res.data.id);
+        setPostId(res.data._id);
         setComments(res.data.comment);
         setAuthor(res.data.author);
         setCommentAuthor(sessionStorage.getItem("username"));
